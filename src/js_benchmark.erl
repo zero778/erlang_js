@@ -40,7 +40,7 @@ time_calls(Ctx, Count) ->
     io:format("Starting: ~p~n", [Count]),
     Start = os:timestamp(),
     do_calls(Ctx, Count),
-    timer:now_diff(erlang:now(), Start) / Count.
+    timer:now_diff(os:timestamp(), Start) / Count.
 
 %% @private
 do_calls(_Ctx, 0) ->
